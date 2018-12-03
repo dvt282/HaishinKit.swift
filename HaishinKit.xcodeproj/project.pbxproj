@@ -340,6 +340,9 @@
 		29EF03781CD79A5400473D99 /* HaishinKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 299F7E3B1CD71A97001E7272 /* HaishinKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		29F6F4851DFB83E200920A3A /* RTMPHandshake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F6F4841DFB83E200920A3A /* RTMPHandshake.swift */; };
 		29F6F4861DFB862400920A3A /* RTMPHandshake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F6F4841DFB83E200920A3A /* RTMPHandshake.swift */; };
+		BBE292A321B5845B0000D281 /* LocalStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE292A221B5845B0000D281 /* LocalStream.swift */; };
+		BBE292A421B5845B0000D281 /* LocalStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE292A221B5845B0000D281 /* LocalStream.swift */; };
+		BBE292A521B5845B0000D281 /* LocalStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE292A221B5845B0000D281 /* LocalStream.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -633,6 +636,7 @@
 		29EA87EF1E79A4120043A5F8 /* CMSampleTimingInfo+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CMSampleTimingInfo+Extension.swift"; sourceTree = "<group>"; };
 		29F04FF21F3388B000172706 /* HaishinKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HaishinKit.podspec; sourceTree = "<group>"; };
 		29F6F4841DFB83E200920A3A /* RTMPHandshake.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RTMPHandshake.swift; sourceTree = "<group>"; };
+		BBE292A221B5845B0000D281 /* LocalStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStream.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -859,6 +863,7 @@
 		2945CBBF1B4BE66000104112 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				BBE292A121B5845B0000D281 /* Local */,
 				290907CD1C3961AD00F2E80C /* Codec */,
 				29EA87D11E799EFF0043A5F8 /* Extension */,
 				295891081EEB8B1D00CE51E1 /* FLV */,
@@ -1146,6 +1151,14 @@
 				29D8067F204828D000F4504D /* VTSession+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		BBE292A121B5845B0000D281 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				BBE292A221B5845B0000D281 /* LocalStream.swift */,
+			);
+			path = Local;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1647,6 +1660,7 @@
 				2901A4EE1D437170002BBD23 /* DisplayLinkedQueue.swift in Sources */,
 				2958911E1EEB8E9600CE51E1 /* FLVSoundRate.swift in Sources */,
 				29B876941CD70AFE00FC07DA /* SoundTransform.swift in Sources */,
+				BBE292A321B5845B0000D281 /* LocalStream.swift in Sources */,
 				29B876861CD70AE800FC07DA /* PacketizedElementaryStream.swift in Sources */,
 				29B876761CD70ACE00FC07DA /* HTTPRequest.swift in Sources */,
 				29B876AD1CD70B2800FC07DA /* ASClass.swift in Sources */,
@@ -1788,6 +1802,7 @@
 				292D8A341D8B294900DBECE2 /* MP4Sampler.swift in Sources */,
 				29B876FD1CD70D5A00FC07DA /* AudioSpecificConfig.swift in Sources */,
 				2958911F1EEB8E9600CE51E1 /* FLVSoundRate.swift in Sources */,
+				BBE292A421B5845B0000D281 /* LocalStream.swift in Sources */,
 				296242631D8DBA8C00C451A3 /* TSReader.swift in Sources */,
 				29B876FE1CD70D5A00FC07DA /* H264+AVC.swift in Sources */,
 				295891171EEB8DFC00CE51E1 /* FLVTagType.swift in Sources */,
@@ -1904,6 +1919,7 @@
 				29EB3E131ED05887001CAE8B /* SoundTransform.swift in Sources */,
 				29EB3DF81ED05799001CAE8B /* Mirror+Extension.swift in Sources */,
 				29EB3E031ED0585D001CAE8B /* AudioSpecificConfig.swift in Sources */,
+				BBE292A521B5845B0000D281 /* LocalStream.swift in Sources */,
 				29EB3E3B1ED05A48001CAE8B /* VideoGravityUtil.swift in Sources */,
 				29EB3E141ED05889001CAE8B /* VideoIOComponent.swift in Sources */,
 				29EB3E221ED059FD001CAE8B /* RTMPMessage.swift in Sources */,
