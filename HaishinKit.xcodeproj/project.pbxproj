@@ -68,7 +68,6 @@
 		294637A81EC89BC9008EEC71 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294637A71EC89BC9008EEC71 /* Config.swift */; };
 		294637AA1EC8A79F008EEC71 /* SampleVideo_360x240_5mb.flv in Resources */ = {isa = PBXBuildFile; fileRef = 294637A91EC8A79F008EEC71 /* SampleVideo_360x240_5mb.flv */; };
 		294852571D852499002DE492 /* RTMPTSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294852551D84BFAD002DE492 /* RTMPTSocket.swift */; };
-		295018201FFA1BD700358E10 /* AACEncoderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2950181F1FFA1BD700358E10 /* AACEncoderTests.swift */; };
 		295018221FFA1C9D00358E10 /* SinWaveUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295018211FFA1C9D00358E10 /* SinWaveUtil.swift */; };
 		295074301E4620FF007F15A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29205CBD1E461F4E009D3FFF /* Main.storyboard */; };
 		295074311E462105007F15A4 /* PreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2950742E1E4620B7007F15A4 /* PreferenceViewController.swift */; };
@@ -339,6 +338,7 @@
 		29FB94311E1BECCA005DE4DF /* SoundSpliter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FB94301E1BECCA005DE4DF /* SoundSpliter.swift */; };
 		29FB94321E1BF507005DE4DF /* SoundSpliter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FB94301E1BECCA005DE4DF /* SoundSpliter.swift */; };
 		5584FF83206BC0C200D6CF31 /* LocalStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584FF82206BC0C200D6CF31 /* LocalStream.swift */; };
+		BBE292A021B57A1F0000D281 /* LocalStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5584FF82206BC0C200D6CF31 /* LocalStream.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -498,7 +498,6 @@
 		294637A71EC89BC9008EEC71 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		294637A91EC8A79F008EEC71 /* SampleVideo_360x240_5mb.flv */ = {isa = PBXFileReference; lastKnownFileType = file; path = SampleVideo_360x240_5mb.flv; sourceTree = "<group>"; };
 		294852551D84BFAD002DE492 /* RTMPTSocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RTMPTSocket.swift; path = Sources/RTMP/RTMPTSocket.swift; sourceTree = SOURCE_ROOT; };
-		2950181F1FFA1BD700358E10 /* AACEncoderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AACEncoderTests.swift; sourceTree = "<group>"; };
 		295018211FFA1C9D00358E10 /* SinWaveUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SinWaveUtil.swift; path = Codec/SinWaveUtil.swift; sourceTree = "<group>"; };
 		2950742E1E4620B7007F15A4 /* PreferenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferenceViewController.swift; path = Examples/iOS/PreferenceViewController.swift; sourceTree = "<group>"; };
 		2957473B1E34F30300EF056E /* RTMPBroadcaster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RTMPBroadcaster.swift; path = Examples/iOS/Screencast/RTMPBroadcaster.swift; sourceTree = "<group>"; };
@@ -876,15 +875,6 @@
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		295018191FFA196800358E10 /* Codec */ = {
-			isa = PBXGroup;
-			children = (
-				2950181F1FFA1BD700358E10 /* AACEncoderTests.swift */,
-			);
-			name = Codec;
-			path = /Users/shogo/Dropbox/xcode/HaishinKit.swift/Tests/Codec;
-			sourceTree = "<absolute>";
-		};
 		295891081EEB8B1D00CE51E1 /* FLV */ = {
 			isa = PBXGroup;
 			children = (
@@ -995,7 +985,6 @@
 				294637A71EC89BC9008EEC71 /* Config.swift */,
 				295018211FFA1C9D00358E10 /* SinWaveUtil.swift */,
 				29798E5D1CE60E5300F5CBD0 /* Info.plist */,
-				295018191FFA196800358E10 /* Codec */,
 				291C2AD11CE9FF3E006F042B /* Asset */,
 				291C2AD21CE9FF48006F042B /* Core */,
 				291C2AD31CE9FF68006F042B /* HTTP */,
@@ -1755,7 +1744,6 @@
 				295018221FFA1C9D00358E10 /* SinWaveUtil.swift in Sources */,
 				294637A81EC89BC9008EEC71 /* Config.swift in Sources */,
 				290EA8981DFB619600053022 /* MP4SamplerTests.swift in Sources */,
-				295018201FFA1BD700358E10 /* AACEncoderTests.swift in Sources */,
 				290EA8AC1DFB61E700053022 /* MD5Tests.swift in Sources */,
 				290EA8A01DFB61B100053022 /* ASClassTests.swift in Sources */,
 				290EA8AB1DFB61E700053022 /* EventDispatcherTests.swift in Sources */,
@@ -1802,6 +1790,7 @@
 				292D8A341D8B294900DBECE2 /* MP4Sampler.swift in Sources */,
 				29B876FD1CD70D5A00FC07DA /* AudioSpecificConfig.swift in Sources */,
 				2958911F1EEB8E9600CE51E1 /* FLVSoundRate.swift in Sources */,
+				BBE292A021B57A1F0000D281 /* LocalStream.swift in Sources */,
 				296242631D8DBA8C00C451A3 /* TSReader.swift in Sources */,
 				29B876FE1CD70D5A00FC07DA /* H264+AVC.swift in Sources */,
 				295891171EEB8DFC00CE51E1 /* FLVTagType.swift in Sources */,
@@ -2490,6 +2479,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Examples/macOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.haishinkit.HaishinKit.Example-macOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -2512,6 +2502,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Examples/macOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.haishinkit.HaishinKit.Example-macOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;

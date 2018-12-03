@@ -2,6 +2,14 @@ import HaishinKit
 import Cocoa
 import AVFoundation
 import VideoToolbox
+import Photos
+
+class ExampleRecorderDelegate: DefaultAVMixerRecorderDelegate {
+    override func didFinishWriting(_ recorder: AVMixerRecorder) {
+        guard let writer: AVAssetWriter = recorder.writer else { return }
+        print("URL:\(writer.outputURL)")
+    }
+}
 
 extension NSPopUpButton {
     fileprivate func present(mediaType: AVMediaType) {
@@ -15,6 +23,7 @@ extension NSPopUpButton {
 final class MainViewController: NSViewController {
     var rtmpConnection: RTMPConnection = RTMPConnection()
     var rtmpStream: RTMPStream!
+    var localStream: LocalStream = LocalStream()
 
     var httpService: HLSService = HLSService(
         domain: "local", type: HTTPService.type, name: "", port: HTTPService.defaultPort
@@ -26,7 +35,8 @@ final class MainViewController: NSViewController {
     @IBOutlet var cameraPopUpButton: NSPopUpButton!
     @IBOutlet var urlField: NSTextField!
     @IBOutlet var segmentedControl: NSSegmentedControl!
-
+    let recorderDelegate = ExampleRecorderDelegate()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         rtmpStream = RTMPStream(connection: rtmpConnection)
@@ -36,6 +46,7 @@ final class MainViewController: NSViewController {
 
         audioPopUpButton?.present(mediaType: .audio)
         cameraPopUpButton?.present(mediaType: .video)
+        localStream.mixer.recorder.delegate = recorderDelegate
     }
 
     override func viewWillAppear() {
@@ -43,6 +54,8 @@ final class MainViewController: NSViewController {
         rtmpStream.attachAudio(DeviceUtil.device(withLocalizedName: audioPopUpButton.titleOfSelectedItem!, mediaType: .audio))
         rtmpStream.attachCamera(DeviceUtil.device(withLocalizedName: cameraPopUpButton.titleOfSelectedItem!, mediaType: .video))
         lfView?.attachStream(rtmpStream)
+        localStream.attachAudio(DeviceUtil.device(withLocalizedName: audioPopUpButton.titleOfSelectedItem!, mediaType: .audio))
+        localStream.attachCamera(DeviceUtil.device(withLocalizedName: cameraPopUpButton.titleOfSelectedItem!, mediaType: .video))
     }
 
     override func viewWillDisappear() {
@@ -74,6 +87,7 @@ final class MainViewController: NSViewController {
                 httpStream.publish("hello")
                 httpService.addHTTPStream(httpStream)
                 httpService.startRunning()
+                localStream.record("Record")
             default:
                 break
             }
@@ -90,6 +104,8 @@ final class MainViewController: NSViewController {
             httpService.removeHTTPStream(httpStream)
             httpService.stopRunning()
             httpStream.publish(nil)
+            
+            localStream.close()
         default:
             break
         }
@@ -143,7 +159,7 @@ final class MainViewController: NSViewController {
             httpStream.attachAudio(DeviceUtil.device(withLocalizedName: audioPopUpButton.titleOfSelectedItem!, mediaType: .audio))
             httpStream.attachCamera(DeviceUtil.device(withLocalizedName: cameraPopUpButton.titleOfSelectedItem!, mediaType: .video))
             lfView.attachStream(httpStream)
-            urlField.stringValue = "http: //{ipAddress}:8080/hello/playlist.m3u8"
+            urlField.stringValue = "http://{ipAddress}:8080/hello/playlist.m3u8"
         default:
             break
         }
