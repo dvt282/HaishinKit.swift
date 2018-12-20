@@ -38,10 +38,13 @@ open class AVMixerRecorder: NSObject {
     fileprivate(set) var sourceTime: CMTime = kCMTimeZero
 
     var isReadyForStartWriting: Bool {
+        return true
+        /*
         guard let writer: AVAssetWriter = writer else {
             return false
         }
         return outputSettings.count == writer.inputs.count
+        */
     }
 
     public override init() {
