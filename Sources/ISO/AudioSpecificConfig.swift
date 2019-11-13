@@ -117,6 +117,8 @@ enum AudioObjectType: UInt8 {
             self = .celp
         case .HVXC:
             self = .hxvc
+        @unknown default:
+            self = .aacMain
         }
     }
 }

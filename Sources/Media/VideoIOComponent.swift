@@ -346,7 +346,7 @@ final class VideoIOComponent: IOComponent {
         defer {
             objc_sync_exit(effects)
         }
-        if let i: Int = effects.index(of: effect) {
+        if let i: Int = effects.firstIndex(of: effect) {
             effects.remove(at: i)
             return true
         }

@@ -668,7 +668,7 @@ final class RTMPVideoMessage: RTMPMessage {
             decodeTimeStamp: CMTime.invalid
         )
 
-        var data: Data = payload.advanced(by: FLVTagType.video.headerSize)
+        let data: Data = payload.advanced(by: FLVTagType.video.headerSize)
         var localData = data
         localData.withUnsafeMutableBytes { (bytes: UnsafeMutablePointer<UInt8>) -> Void in
             var blockBuffer: CMBlockBuffer?

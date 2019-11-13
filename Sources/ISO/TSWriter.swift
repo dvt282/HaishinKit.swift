@@ -81,7 +81,7 @@ class TSWriter {
             decodeTimeStamp = presentationTimeStamp
         }
 
-        var packets: [TSPacket] = split(PID, PES: PES, timestamp: decodeTimeStamp)
+        let packets: [TSPacket] = split(PID, PES: PES, timestamp: decodeTimeStamp)
         _ = rotateFileHandle(decodeTimeStamp)
 
         if streamID == 192 {

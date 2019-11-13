@@ -51,6 +51,8 @@ open class SampleHandler: RPBroadcastSampleHandler {
             break
         case .audioMic:
             broadcaster.appendSampleBuffer(sampleBuffer, withType: .audio)
+        @unknown default:
+            print("No sampleBufferType")
         }
     }
 }

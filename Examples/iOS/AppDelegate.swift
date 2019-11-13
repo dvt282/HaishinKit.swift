@@ -14,7 +14,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         let session: AVAudioSession = AVAudioSession.sharedInstance()
         do {
             try session.setPreferredSampleRate(44_100)
-            try session.setCategory(convertFromAVAudioSessionCategory(AVAudioSession.Category.playAndRecord), with: .allowBluetooth)
+            try session.setCategory(AVAudioSession.Category.playAndRecord)
             try session.setMode(AVAudioSession.Mode.default)
             try session.setActive(true)
         } catch {
@@ -23,7 +23,3 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
-// Helper function inserted by Swift 4.2 migrator.
-fileprivate func convertFromAVAudioSessionCategory(_ input: AVAudioSession.Category) -> String {
-	return input.rawValue
-}
